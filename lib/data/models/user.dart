@@ -5,8 +5,8 @@ class User {
   final String password;
   final String name;
   // final String? birth;
-  // final String? gender;
-  // final double? height;
+  final String? gender;
+  final double? height;
   //
   // final double? weight;
   // final int? totalCoin;
@@ -22,8 +22,8 @@ class User {
       required this.password,
       required this.name,
        // this.birth,
-       // this.gender,
-       // this.height,
+       this.gender,
+       this.height,
        // this.weight,
        // this.totalCoin,
        // this.goalMuscle,
@@ -39,7 +39,7 @@ class User {
         "password": password,
         "name": name,
         // "birth": birth,
-        // "gender": gender,
+        "gender": gender,
         // "height": height,
         // "weight": weight,
         // "totalCoin": totalCoin,
@@ -54,10 +54,10 @@ class User {
         username = json["username"],
         phone = json["phone"] ?? "",
         password = json["password"] ?? "",
-        name = json["name"] ?? "";
+        name = json["name"] ?? "",
         // birth = json["birth"] ?? "",
-        // gender = json["gender"] ?? "",
-        // height = json["height"] ?? 0.0,
+        gender = json["gender"] ?? "",
+        height = json["height"] ?? 0.0;
         // weight = json["weight"] ?? 0.0,
         // totalCoin = json["totalCoin"] ?? 0,
         // goalMuscle = json["goalMuscle"] ?? 0,

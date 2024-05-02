@@ -4,8 +4,8 @@ class JoinRequestDTO {
   final String password;
   final String name;
   // final DateTime? birth;
-  // final String? gender;
-  // final double? height;
+  final String? gender;
+  final double? height;
 
   JoinRequestDTO(
       {required this.username,
@@ -13,8 +13,8 @@ class JoinRequestDTO {
       required this.password,
       required this.name,
        // this.birth,
-       // this.gender,
-       // this.height
+       this.gender,
+       this.height
       });
 
   Map<String, dynamic> toJson() => {
@@ -23,8 +23,8 @@ class JoinRequestDTO {
         "password": password,
         "name": name,
         // "birth": birth,
-        // "gender": gender,
-        // "height": height
+        "gender": gender,
+        "height": height
       };
 }
 

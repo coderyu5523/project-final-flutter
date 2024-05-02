@@ -17,6 +17,8 @@ class JoinPage extends ConsumerWidget {
     final _password = TextEditingController();
     final _name = TextEditingController();
     final _phone = TextEditingController();
+    final _gender = TextEditingController();
+    final _height = TextEditingController();
 
     DateTime? selectedDate; // 날짜
     String? selectedGender; // 성별
@@ -92,7 +94,7 @@ class JoinPage extends ConsumerWidget {
                               backgroundColor: Colors.teal,
                               foregroundColor: Colors.white,
                               padding:
-                              const EdgeInsets.symmetric(vertical: 20.0),
+                                  const EdgeInsets.symmetric(vertical: 20.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -198,7 +200,7 @@ class JoinPage extends ConsumerWidget {
                     const SizedBox(height: 25.0),
                     // 성별
                     DropdownButtonFormField<String>(
-                      value: selectedGender,
+                      value: _gender.text.isNotEmpty ? _gender.text : null,
                       decoration: InputDecoration(
                         labelText: '성별',
                         border: OutlineInputBorder(
@@ -213,9 +215,12 @@ class JoinPage extends ConsumerWidget {
                         );
                       }).toList(),
                       onChanged: (String? newValue) {
-                        // 여기에 성별 선택시 로직 작성
+                        // 선택된 값이 변경될 때마다 TextEditingController에 업데이트
+                        _gender.text = newValue ?? '';
+                        // 여기에 선택된 값으로 로직 작성
                       },
                     ),
+
                     const SizedBox(height: 25.0),
                     // 키
                     DropdownButtonFormField<String>(
@@ -227,7 +232,7 @@ class JoinPage extends ConsumerWidget {
                         ),
                       ),
                       items: List<String>.generate(
-                          201, (index) => (50 + index).toString())
+                              201, (index) => (50 + index).toString())
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -268,13 +273,17 @@ class JoinPage extends ConsumerWidget {
                             String password = _password.text.trim();
                             String phone = _phone.text.trim();
                             String name = _name.text.trim();
+                            String gender = _gender.text.trim();
+
+                            print(gender);
 
                             JoinRequestDTO joinRequestDTO = JoinRequestDTO(
-                                username: username,
-                                phone: phone,
-                                password: password,
-                                name: name,
-                                );
+                              username: username,
+                              phone: phone,
+                              password: password,
+                              name: name,
+                              gender: gender
+                            );
                             SessionStore store = ref.read(sessionProvider);
                             store.join(joinRequestDTO);
                           }
