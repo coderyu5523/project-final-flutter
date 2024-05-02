@@ -4,7 +4,7 @@ class JoinRequestDTO {
   final String password;
   final String name;
 
-  // final DateTime? birth;
+  final DateTime birth;
   final String gender;
   final double height;
 
@@ -13,7 +13,7 @@ class JoinRequestDTO {
       required this.phone,
       required this.password,
       required this.name,
-      // this.birth,
+      required this.birth,
       required this.gender,
       required this.height});
 
@@ -22,7 +22,7 @@ class JoinRequestDTO {
         "phone": phone,
         "password": password,
         "name": name,
-        // "birth": birth,
+        "birth": birth,
         "gender": gender,
         "height": height
       };

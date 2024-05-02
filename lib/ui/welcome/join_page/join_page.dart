@@ -19,10 +19,9 @@ class JoinPage extends ConsumerWidget {
     final _phone = TextEditingController();
     final _gender = TextEditingController();
     final _height = TextEditingController();
+    final _birth = TextEditingController();
 
     DateTime? selectedDate; // 날짜
-    String? selectedGender; // 성별
-    String? selectedHeight; // 키
 
     return CustomScaffold(
       child: DraggableScrollableSheet(
@@ -150,33 +149,34 @@ class JoinPage extends ConsumerWidget {
                     InkWell(
                       onTap: () async {
                         final DateTime? picked = await showDatePicker(
-                            context: context,
-                            initialDate: selectedDate ?? DateTime.now(),
-                            firstDate: DateTime(1900),
-                            lastDate: DateTime.now(),
-                            builder: (context, child) {
-                              return Theme(
-                                data: ThemeData.light().copyWith(
-                                  colorScheme: ColorScheme.light(
-                                    primary: Colors.teal,
-                                    // header background color
-                                    onPrimary: Colors.white,
-                                    // header text color
-                                    onSurface: Colors.black, // body text color
-                                  ),
-                                  dialogBackgroundColor: Colors
-                                      .white, // background color of the dialog
+                          context: context,
+                          initialDate: selectedDate ?? DateTime.now(),
+                          firstDate: DateTime(1900),
+                          lastDate: DateTime.now(),
+                          builder: (context, child) {
+                            return Theme(
+                              data: ThemeData.light().copyWith(
+                                colorScheme: ColorScheme.light(
+                                  primary: Colors.teal,
+                                  onPrimary: Colors.white,
+                                  onSurface: Colors.black,
                                 ),
-                                child: child!,
-                              );
-                            });
+                                dialogBackgroundColor: Colors.white,
+                              ),
+                              child: child!,
+                            );
+                          },
+                        );
+
                         if (picked != null && picked != selectedDate) {
-                          // 여기에 생년월일 선택시 로직 작성
+                          _birth.text = picked.toString().split(' ')[0];
                         }
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 20.0),
+                          horizontal: 10.0,
+                          vertical: 20.0,
+                        ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           border: Border.all(color: Colors.grey),
@@ -185,14 +185,18 @@ class JoinPage extends ConsumerWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              selectedDate == null
-                                  ? '생년월일을 입력하세요'
-                                  : '${selectedDate!.toLocal()}'.split(' ')[0],
+                              _birth.text.isNotEmpty
+                                  ? _birth.text
+                                  : '생년월일을 입력하세요',
                               style: const TextStyle(
-                                  color: Colors.black54, fontSize: 16),
+                                color: Colors.black54,
+                                fontSize: 16,
+                              ),
                             ),
-                            const Icon(Icons.calendar_today,
-                                color: Colors.teal),
+                            const Icon(
+                              Icons.calendar_today,
+                              color: Colors.teal,
+                            ),
                           ],
                         ),
                       ),
@@ -231,7 +235,8 @@ class JoinPage extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      items: List<String>.generate(201, (index) => (50 + index).toString())
+                      items: List<String>.generate(
+                              201, (index) => (50 + index).toString())
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -244,7 +249,6 @@ class JoinPage extends ConsumerWidget {
                         }
                       },
                     ),
-
 
                     const SizedBox(height: 25.0),
                     // 개인정보처리방침
@@ -278,6 +282,10 @@ class JoinPage extends ConsumerWidget {
                             String name = _name.text.trim();
                             String gender = _gender.text.trim();
                             double height = double.parse(_height.text.trim());
+                            DateTime birth = DateTime.parse(_birth.text.trim());
+
+                            print(birth.runtimeType);
+                            print(birth);
 
                             JoinRequestDTO joinRequestDTO = JoinRequestDTO(
                                 username: username,
@@ -285,7 +293,8 @@ class JoinPage extends ConsumerWidget {
                                 password: password,
                                 name: name,
                                 gender: gender,
-                                height: height);
+                                height: height,
+                            birth: birth);
                             print("height: ${height}");
                             SessionStore store = ref.read(sessionProvider);
                             store.join(joinRequestDTO);
