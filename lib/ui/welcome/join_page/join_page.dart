@@ -224,15 +224,14 @@ class JoinPage extends ConsumerWidget {
                     const SizedBox(height: 25.0),
                     // 키
                     DropdownButtonFormField<String>(
-                      value: selectedHeight,
+                      value: null, //
                       decoration: InputDecoration(
                         labelText: '키 (cm)',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      items: List<String>.generate(
-                              201, (index) => (50 + index).toString())
+                      items: List<String>.generate(201, (index) => (50 + index).toString())
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -240,9 +239,13 @@ class JoinPage extends ConsumerWidget {
                         );
                       }).toList(),
                       onChanged: (String? newValue) {
-                        // 여기에 키 선택시 로직 작성
+                        if (newValue != null) {
+                          _height.text = newValue;
+                        }
                       },
                     ),
+
+
                     const SizedBox(height: 25.0),
                     // 개인정보처리방침
                     Row(
@@ -274,16 +277,16 @@ class JoinPage extends ConsumerWidget {
                             String phone = _phone.text.trim();
                             String name = _name.text.trim();
                             String gender = _gender.text.trim();
-
-                            print(gender);
+                            double height = double.parse(_height.text.trim());
 
                             JoinRequestDTO joinRequestDTO = JoinRequestDTO(
-                              username: username,
-                              phone: phone,
-                              password: password,
-                              name: name,
-                              gender: gender
-                            );
+                                username: username,
+                                phone: phone,
+                                password: password,
+                                name: name,
+                                gender: gender,
+                                height: height);
+                            print("height: ${height}");
                             SessionStore store = ref.read(sessionProvider);
                             store.join(joinRequestDTO);
                           }

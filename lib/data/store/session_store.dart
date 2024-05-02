@@ -44,9 +44,7 @@ class SessionStore extends SessionUser {
 
   Future<void> join(JoinRequestDTO requestDTO) async {
     ResponseDTO responseDTO = await UserRepository().fetchJoin(requestDTO);
-    print("1111111111111111");
     if (responseDTO.status == 200) {
-      print("2222222222222222222222");
       Navigator.pushNamed(mContext!, Move.loginPage);
     } else {
       ScaffoldMessenger.of(mContext!)

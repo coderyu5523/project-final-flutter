@@ -4,9 +4,11 @@ class User {
   final String phone;
   final String password;
   final String name;
+
   // final String? birth;
-  final String? gender;
-  final double? height;
+  final String gender;
+  final double height;
+
   //
   // final double? weight;
   // final int? totalCoin;
@@ -15,22 +17,22 @@ class User {
   // final String? createdAt;
   // final String? userImg;
 
-  User(
-      {required this.id,
-      required this.username,
-      required this.phone,
-      required this.password,
-      required this.name,
-       // this.birth,
-       this.gender,
-       this.height,
-       // this.weight,
-       // this.totalCoin,
-       // this.goalMuscle,
-       // this.goalFat,
-       // this.createdAt,
-       // this.userImg
-      });
+  User({
+    required this.id,
+    required this.username,
+    required this.phone,
+    required this.password,
+    required this.name,
+    // this.birth,
+    required this.gender,
+    required this.height,
+    // this.weight,
+    // this.totalCoin,
+    // this.goalMuscle,
+    // this.goalFat,
+    // this.createdAt,
+    // this.userImg
+  });
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -40,7 +42,7 @@ class User {
         "name": name,
         // "birth": birth,
         "gender": gender,
-        // "height": height,
+        "height": height,
         // "weight": weight,
         // "totalCoin": totalCoin,
         // "goalMuscle": goalMuscle,
@@ -58,11 +60,10 @@ class User {
         // birth = json["birth"] ?? "",
         gender = json["gender"] ?? "",
         height = json["height"] ?? 0.0;
-        // weight = json["weight"] ?? 0.0,
-        // totalCoin = json["totalCoin"] ?? 0,
-        // goalMuscle = json["goalMuscle"] ?? 0,
-        // goalFat = json["goalFat"] ?? 0,
-        // createdAt = json["createdAt"] ?? "",
-        // userImg = json["userImg"] ?? "";
-
+// weight = json["weight"] ?? 0.0,
+// totalCoin = json["totalCoin"] ?? 0,
+// goalMuscle = json["goalMuscle"] ?? 0,
+// goalFat = json["goalFat"] ?? 0,
+// createdAt = json["createdAt"] ?? "",
+// userImg = json["userImg"] ?? "";
 }
