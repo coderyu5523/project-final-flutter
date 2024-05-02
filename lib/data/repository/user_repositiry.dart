@@ -6,7 +6,6 @@ import 'package:project_app/data/models/user.dart';
 class UserRepository {
   Future<(ResponseDTO, String)> fetchLogin(LoginRequestDTO loginReqDTO) async {
     final response = await dio.post("/login", data: loginReqDTO.toJson());
-
     ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
 
     if (responseDTO.status == 200) {
@@ -17,5 +16,19 @@ class UserRepository {
     } else {
       return (responseDTO, "");
     }
+  }
+
+  Future<ResponseDTO> fetchJoin(JoinRequestDTO requestDTO) async {
+
+    print(requestDTO.password);
+    print(requestDTO.username);
+
+    print(requestDTO.name);
+    print(requestDTO.phone);
+    final response = await dio.post("/join", data: requestDTO.toJson());
+    ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+    print("888888888888888888");
+
+    return responseDTO;
   }
 }

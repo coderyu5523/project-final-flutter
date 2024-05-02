@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:project_app/data/dtos/user/user_request.dart';
 
 import '../../../_core/constants/move.dart';
 import '../../../_core/constants/theme.dart';
+import '../../../data/store/session_store.dart';
 import '../../_common/components/custom_scaffold.dart';
 
-class JoinPage extends StatelessWidget {
+class JoinPage extends ConsumerWidget {
   const JoinPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final _formKey = GlobalKey<FormState>();
+    final _username = TextEditingController();
+    final _password = TextEditingController();
+    final _name = TextEditingController();
+    final _phone = TextEditingController();
 
     DateTime? selectedDate; // 날짜
     String? selectedGender; // 성별
@@ -47,6 +54,7 @@ class JoinPage extends StatelessWidget {
                     const SizedBox(height: 40.0),
                     // 이름
                     TextFormField(
+                      controller: _name,
                       decoration: InputDecoration(
                         label: const Text('이름'),
                         hintText: '이름을 입력하세요',
@@ -63,6 +71,7 @@ class JoinPage extends StatelessWidget {
                         Expanded(
                           flex: 4,
                           child: TextFormField(
+                            controller: _username,
                             decoration: InputDecoration(
                               label: const Text('ID'),
                               hintText: 'ID를 입력하세요',
@@ -83,7 +92,7 @@ class JoinPage extends StatelessWidget {
                               backgroundColor: Colors.teal,
                               foregroundColor: Colors.white,
                               padding:
-                                  const EdgeInsets.symmetric(vertical: 20.0),
+                              const EdgeInsets.symmetric(vertical: 20.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -96,6 +105,7 @@ class JoinPage extends StatelessWidget {
                     const SizedBox(height: 25.0),
                     // 비밀번호
                     TextFormField(
+                      controller: _password,
                       obscureText: true,
                       decoration: InputDecoration(
                         label: const Text('비밀번호'),
@@ -122,6 +132,7 @@ class JoinPage extends StatelessWidget {
                     const SizedBox(height: 25.0),
                     //전화번호
                     TextFormField(
+                      controller: _phone,
                       decoration: InputDecoration(
                         label: const Text('휴대폰번호'),
                         hintText: '휴대폰번호를 입력하세요',
@@ -216,7 +227,7 @@ class JoinPage extends StatelessWidget {
                         ),
                       ),
                       items: List<String>.generate(
-                              201, (index) => (50 + index).toString())
+                          201, (index) => (50 + index).toString())
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -251,6 +262,23 @@ class JoinPage extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
+                          bool isOk = _formKey.currentState!.validate();
+                          if (isOk) {
+                            String username = _username.text.trim();
+                            String password = _password.text.trim();
+                            String phone = _phone.text.trim();
+                            String name = _name.text.trim();
+
+                            JoinRequestDTO joinRequestDTO = JoinRequestDTO(
+                                username: username,
+                                phone: phone,
+                                password: password,
+                                name: name,
+                                );
+                            SessionStore store = ref.read(sessionProvider);
+                            store.join(joinRequestDTO);
+                          }
+
                           Navigator.pushNamed(context, Move.loginPage);
                         },
                         style: ElevatedButton.styleFrom(

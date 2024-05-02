@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_app/_core/constants/http.dart';
 import 'package:project_app/_core/constants/move.dart';
+import 'package:project_app/data/dtos/response_dto.dart';
 import 'package:project_app/data/dtos/user/user_request.dart';
 import 'package:project_app/data/repository/user_repositiry.dart';
 import 'package:project_app/main.dart';
@@ -18,9 +19,9 @@ class SessionUser {
 
 // 창고
 class SessionStore extends SessionUser {
-  Future<void> login(LoginRequestDTO requestDTO) async {
-    final mContext = navigatorKey.currentContext;
+  final mContext = navigatorKey.currentContext;
 
+  Future<void> login(LoginRequestDTO requestDTO) async {
     var (responseDTO, accessToken) =
         await UserRepository().fetchLogin(requestDTO);
 
@@ -40,6 +41,18 @@ class SessionStore extends SessionUser {
   }
 
   SessionStore();
+
+  Future<void> join(JoinRequestDTO requestDTO) async {
+    ResponseDTO responseDTO = await UserRepository().fetchJoin(requestDTO);
+    print("1111111111111111");
+    if (responseDTO.status == 200) {
+      print("2222222222222222222222");
+      Navigator.pushNamed(mContext!, Move.loginPage);
+    } else {
+      ScaffoldMessenger.of(mContext!)
+          .showSnackBar(SnackBar(content: Text("로그인 실패 : ${responseDTO.msg}")));
+    }
+  }
 }
 
 // 창고 관리자
