@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_app/ui/main/today/today_page_viewmodel.dart';
+import 'package:project_app/ui/main/today/viewmodel/today_page_viewmodel.dart';
 import 'package:project_app/ui/main/today/widgets/today_status.dart';
 
 import '../../../../_core/constants/constants.dart';

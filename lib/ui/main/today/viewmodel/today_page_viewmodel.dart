@@ -6,7 +6,7 @@ import 'package:project_app/data/dtos/user/user_response.dart';
 import 'package:project_app/data/store/session_store.dart';
 import 'package:project_app/main.dart';
 
-import '../../../data/repository/today_repository.dart';
+import '../../../../data/repository/today_repository.dart';
 
 class TodayPageModel {
   MainDTO mainDTO;

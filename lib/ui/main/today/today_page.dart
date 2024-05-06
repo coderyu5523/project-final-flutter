@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:project_app/ui/main/today/today_page_viewmodel.dart';
+import 'package:project_app/ui/main/today/viewmodel/today_page_viewmodel.dart';
 import 'package:project_app/ui/main/today/widgets/today_body.dart';
 import 'package:project_app/ui/main/today/widgets/today_header.dart';
 
-import 'VisibilityState.dart';
+import 'viewmodel/visibility_state_viewmodel.dart';
 
 class TodayPage extends ConsumerWidget {
   const TodayPage({super.key});

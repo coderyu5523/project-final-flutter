@@ -8,8 +8,8 @@ import 'package:project_app/ui/main/today/widgets/today_user_data.dart';
 
 import '../../../../_core/constants/size.dart';
 import '../../../../data/models/chartDummy.dart';
-import '../VisibilityState.dart';
-import '../today_page_viewmodel.dart';
+import '../viewmodel/visibility_state_viewmodel.dart';
+import '../viewmodel/today_page_viewmodel.dart';
 import 'last_update.dart';
 import 'my_changes.dart';
 
