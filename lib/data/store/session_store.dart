@@ -68,6 +68,6 @@ class SessionStore extends SessionUser {
 }
 
 // 창고 관리자
-final sessionProvider = StateProvider.autoDispose<SessionStore>((ref) {
+final sessionProvider = StateProvider<SessionStore>((ref) {
   return SessionStore(ref);
 });

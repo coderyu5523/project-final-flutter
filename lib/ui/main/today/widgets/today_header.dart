@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:project_app/ui/main/today/widgets/today_bodydata.dart';
 import 'package:project_app/ui/main/today/widgets/today_changes_chart.dart';
@@ -20,7 +21,6 @@ class TodayHeader extends ConsumerWidget {
     final visibilityState = ref.watch(visibilityProvider);
     TodayPageModel? model = ref.watch(TodayPageProvider);
 
-    print("111111111111");
     // 상태 변경 함수
     void toggleVisibility(String type) {
       if (type == 'fat')
@@ -30,6 +30,7 @@ class TodayHeader extends ConsumerWidget {
       if (type == 'weight')
         ref.read(visibilityProvider.notifier).toggleWeightVisibility();
     }
+
 
     return Column(
       children: [

@@ -7,7 +7,7 @@ import '../dtos/response_dto.dart';
 class TodayRepository {
   Future<ResponseDTO> fetchMainPage(String accessToken) async {
     print("666666666666");
-    var response = await dio.get("/api/users",
+    final response = await dio.get("/api/users",
         options: Options(headers: {"Authorization": "${accessToken}"}));
 
     print("777777777777");

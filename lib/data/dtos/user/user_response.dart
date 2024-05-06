@@ -8,23 +8,26 @@ class MainDTO {
   final double fat;
   final double muscle;
   final double weight;
+  final List<BodyDataDTO> bodyData; // bodyData 필드 추가
 
   MainDTO(this.id, this.name, this.goalFat, this.goalMuscle, this.fat,
-      this.muscle, this.weight);
+      this.muscle, this.weight, this.bodyData);
 
   MainDTO.fromJson(Map<String, dynamic> json)
       : id = json["id"],
-        name = json["name"] ?? "",
-        fat = json["fat"] ?? "",
-        muscle = json["muscle"] ?? "",
-        weight = json["weight"] ?? 0.0,
-        goalMuscle = json["goalMuscle"] ?? 0.0,
-        goalFat = json["goalFat"] ?? 0.0;
+        name = json["name"],
+        fat = json["fat"].toDouble(),
+        muscle = json["muscle"].toDouble(),
+        weight = json["weight"].toDouble(),
+        goalMuscle = json["goalMuscle"].toDouble(),
+        goalFat = json["goalFat"].toDouble(),
+        bodyData = (json["bodyData"] as List)
+            .map((e) => BodyDataDTO.fromJson(e))
+            .toList();
 }
 
 class BodyDataDTO {
   final int id;
-
   final double fat;
   final double muscle;
   final double weight;
@@ -34,8 +37,8 @@ class BodyDataDTO {
 
   BodyDataDTO.fromJson(Map<String, dynamic> json)
       : id = json["id"],
-        fat = json["fat"] ?? "",
-        muscle = json["muscle"] ?? "",
-        weight = json["weight"] ?? 0.0,
-        date = DateFormat("yyyy-mm-dd").parse(json["date"]);
+        fat = json["fat"].toDouble(),
+        muscle = json["muscle"].toDouble(),
+        weight = json["weight"].toDouble(),
+        date = DateFormat("yyyy-MM-dd").parse(json["date"], true).toLocal(); // ISO 8601 포맷을 파싱
 }

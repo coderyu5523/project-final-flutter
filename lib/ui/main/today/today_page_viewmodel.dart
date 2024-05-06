@@ -32,8 +32,15 @@ class TodayPageViewModel extends StateNotifier<TodayPageModel?> {
 
     print("4444444444444");
     if (responseDTO.status == 200) {
-      print("5555555555555555");
-      state = responseDTO.body;
+      print("101010101010");
+      // JSON 객체에서 MainDTO 인스턴스를 생성합니다.
+      MainDTO mainDTO = MainDTO.fromJson(responseDTO.body);
+      // MainDTO 인스턴스를 통해 bodyData 리스트를 직접 얻습니다.
+      List<BodyDataDTO> bodyData = mainDTO.bodyData;
+      TodayPageModel model = TodayPageModel(mainDTO: mainDTO, bodyData: bodyData);
+      print(model.mainDTO);
+      print("14141414141414");
+      state = model;
     } else {
       print("1212121212");
       ScaffoldMessenger.of(mContext!).showSnackBar(
