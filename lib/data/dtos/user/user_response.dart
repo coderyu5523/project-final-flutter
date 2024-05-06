@@ -8,7 +8,7 @@ class MainDTO {
   final double fat;
   final double muscle;
   final double weight;
-  final List<BodyDataDTO> bodyData; // bodyData 필드 추가
+  final List<BodyDataDTO> bodyData;
 
   MainDTO(this.id, this.name, this.goalFat, this.goalMuscle, this.fat,
       this.muscle, this.weight, this.bodyData);

@@ -14,13 +14,14 @@ import 'last_update.dart';
 import 'my_changes.dart';
 
 class TodayHeader extends ConsumerWidget {
-  const TodayHeader({Key? key}) : super(key: key);
+  final visibilityState;
+
+  TodayPageModel? model;
+
+  TodayHeader(this.visibilityState, this.model);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final visibilityState = ref.watch(visibilityProvider);
-    TodayPageModel? model = ref.watch(TodayPageProvider);
-
     // 상태 변경 함수
     void toggleVisibility(String type) {
       if (type == 'fat')
@@ -30,7 +31,6 @@ class TodayHeader extends ConsumerWidget {
       if (type == 'weight')
         ref.read(visibilityProvider.notifier).toggleWeightVisibility();
     }
-
 
     return Column(
       children: [

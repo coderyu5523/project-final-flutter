@@ -32,7 +32,7 @@ class TodayUserData extends StatelessWidget {
           children: [
             SizedBox(height: gap_s),
             Text(
-              "${model.mainDTO.name}님,",
+              "${model.mainDTO.name}님",
               style: h4(mColor: kAccentColor2),
             ),
             const SizedBox(height: gap_s),
