@@ -27,6 +27,32 @@ class JoinRequestDTO {
       };
 }
 
+class UserUpdateRequestDTO {
+  final int id;
+  final String name;
+  final String phone;
+  final int password;
+  final double height;
+  final String userImg;
+
+  UserUpdateRequestDTO(
+      {required this.id,
+      required this.name,
+      required this.phone,
+      required this.password,
+      required this.height,
+      required this.userImg});
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "name": name,
+        "phone": phone,
+        "password": password,
+        "height": height,
+        "userImg": userImg
+      };
+}
+
 class LoginRequestDTO {
   final String username;
   final String password;

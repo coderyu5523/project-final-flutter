@@ -58,7 +58,6 @@ class SessionStore extends SessionUser {
       this.user = responseDTO.body;
       this.accessToken = accessToken;
       this.isLogin = true;
-
       Navigator.pushNamed(mContext!, Move.mainPage);
     } else {
       ScaffoldMessenger.of(mContext!)

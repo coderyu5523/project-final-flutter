@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:project_app/_core/constants/http.dart';
 import 'package:project_app/data/dtos/response_dto.dart';
 import 'package:project_app/data/dtos/user/user_request.dart';
@@ -25,5 +26,15 @@ class UserRepository {
     } else {
       return (responseDTO, "");
     }
+  }
+
+  Future<ResponseDTO> fetchUserUpdateForm(String accessToken) async {
+    print("fetchUserUpdateForm");
+    final response = await dio.get("/api/users/update-form",
+        options: Options(headers: {"Authorization": "${accessToken}"}));
+
+    ResponseDTO responseDTO = ResponseDTO.fromJson(response.data);
+
+    return responseDTO;
   }
 }

@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/_core/constants/constants.dart';
+import 'package:project_app/data/models/user.dart';
 
 class EditProfileForm extends StatefulWidget {
+
+  final User user;
+  EditProfileForm(this.user);
+
   @override
-  _EditProfileFormState createState() => _EditProfileFormState();
+  _EditProfileFormState createState() => _EditProfileFormState(user);
+
 }
 
 class _EditProfileFormState extends State<EditProfileForm> {
+  final User user;
+  _EditProfileFormState(this.user);
+
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -38,6 +47,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
                 label: Text('이름'),
                 hintText: '이름을 입력하세요',
               ),
+              initialValue: "${user!.username}",
             ),
           ),
           Padding(
@@ -70,6 +80,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
                 label: Text('휴대폰번호'),
                 hintText: '휴대폰번호를 입력하세요',
               ),
+              initialValue: "${user!.password}",
             ),
           ),
           Padding(
@@ -80,6 +91,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
                 label: Text('키'),
                 hintText: '키를 입력하세요',
               ),
+              initialValue: "${user!.height}",
             ),
           ),
           Padding(
