@@ -4,10 +4,10 @@ import '../../ui/main/today/viewmodel/today_page_viewmodel.dart';
 
 
 List<FlSpot> FatDataFromModel(TodayPageModel? model) {
-  if (model == null || model.bodyData.isEmpty) {
+  if (model == null || model.bodyDataList.isEmpty) {
     return [];
   }
-  final points = model.bodyData.takeLast(5).toList();
+  final points = model.bodyDataList.takeLast(5).toList();
   // FlSpot 리스트를 생성합니다.
   List<FlSpot> fatData = List.generate(points.length, (index) {
     final bodyDataPoint = points[index];
@@ -19,10 +19,10 @@ List<FlSpot> FatDataFromModel(TodayPageModel? model) {
 
 
 List<FlSpot> MuscleDataFromModel(TodayPageModel? model) {
-  if (model == null || model.bodyData.isEmpty) {
+  if (model == null || model.bodyDataList.isEmpty) {
     return [];
   }
-  final points = model.bodyData.takeLast(5).toList();
+  final points = model.bodyDataList.takeLast(5).toList();
 
   List<FlSpot> muscleData = List.generate(points.length, (index) {
     final bodyDataPoint = points[index];
@@ -32,10 +32,10 @@ List<FlSpot> MuscleDataFromModel(TodayPageModel? model) {
 }
 
 List<FlSpot> WeightDataFromModel(TodayPageModel? model) {
-  if (model == null || model.bodyData.isEmpty) {
+  if (model == null || model.bodyDataList.isEmpty) {
     return [];
   }
-  final points = model.bodyData.takeLast(5).toList();
+  final points = model.bodyDataList.takeLast(5).toList();
 
   List<FlSpot> weightDataData = List.generate(points.length, (index) {
     final bodyDataPoint = points[index];

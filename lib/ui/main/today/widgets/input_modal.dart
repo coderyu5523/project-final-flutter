@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../_core/constants/constants.dart';
+import '../../../../data/dtos/today/today_request.dart';
+import '../viewmodel/today_page_viewmodel.dart';
 
-void showInputModal(BuildContext context) {
+void showInputModal(BuildContext context,  TodayPageModel? model,WidgetRef ref) {
   showModalBottomSheet(
     context: context,
+
     isScrollControlled: true, // 키보드가 모달을 가리지 않도록 설정
     builder: (BuildContext context) {
+
+      final _fat = TextEditingController();
+      final _muscle = TextEditingController();
+      final _weight = TextEditingController();
+
       return Theme(
         data: Theme.of(context).copyWith(
           inputDecorationTheme: InputDecorationTheme(
@@ -33,6 +42,7 @@ void showInputModal(BuildContext context) {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               TextFormField(
+                controller: _fat,
                 decoration: InputDecoration(
                   labelText: '체지방 (%)',
                 ),
@@ -41,6 +51,7 @@ void showInputModal(BuildContext context) {
               ),
               SizedBox(height: 10),
               TextFormField(
+                controller: _muscle,
                 decoration: InputDecoration(
                   labelText: '골격근 (%)',
                 ),
@@ -49,6 +60,7 @@ void showInputModal(BuildContext context) {
               ),
               SizedBox(height: 10),
               TextFormField(
+                controller: _weight,
                 decoration: InputDecoration(
                   labelText: '체중 (kg)',
                 ),
@@ -62,9 +74,15 @@ void showInputModal(BuildContext context) {
                   foregroundColor: Colors.white,
                 ),
                 child: Text('저장'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () async {
+                  double? fat = double.tryParse(_fat.text) ?? model?.bodyDataList.last.fat;
+                  double? muscle = double.tryParse(_muscle.text) ?? model?.bodyDataList.last.muscle;
+                  double? weight = double.tryParse(_weight.text) ?? model?.bodyDataList.last.weight;
+
+                  AddBodyDataRequestDTO requestDTO = AddBodyDataRequestDTO(fat!, muscle!, weight!);
+                  await ref.read(TodayPageProvider.notifier).notifyAddBodyData(requestDTO);
+                  ref.watch(TodayPageProvider.notifier)..notifyInit();
+                  },
               ),
             ],
           ),

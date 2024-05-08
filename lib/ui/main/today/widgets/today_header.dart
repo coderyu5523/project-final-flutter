@@ -39,7 +39,7 @@ class TodayHeader extends ConsumerWidget {
           padding: const EdgeInsets.all(gap_m),
           child: Column(
             children: [
-              TodayChangesDetail(),
+              TodayChangesDetail(model,ref),
               SizedBox(height: gap_l),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: gap_l),
@@ -58,7 +58,7 @@ class TodayHeader extends ConsumerWidget {
                 weightVisible: visibilityState.weightVisible,
               ),
               SizedBox(height: gap_s),
-              LastUpdate(lastUpdated: '${model?.bodyData.last.date}'),
+              LastUpdate(lastUpdated: '${model?.bodyDataList.last.date}'),
               SizedBox(height: gap_l),
               MyChanges(),
             ],
