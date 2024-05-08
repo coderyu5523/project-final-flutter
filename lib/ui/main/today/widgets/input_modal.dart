@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../_core/constants/constants.dart';
 import '../../../../data/dtos/today/today_request.dart';
 import '../viewmodel/today_page_viewmodel.dart';
@@ -75,18 +76,19 @@ void showInputModal(
                   foregroundColor: Colors.white,
                 ),
                 child: Text('저장'),
-                onPressed: ()  {
-                  double? fat = double.tryParse(_fat.text) ?? model?.bodyData?.last.fat;
-                  double? muscle = double.tryParse(_muscle.text) ?? model?.bodyData?.last.muscle;
-                  double? weight = double.tryParse(_weight.text) ?? model?.bodyData?.last.weight;
+                onPressed: () {
+                  double? fat =
+                      double.tryParse(_fat.text) ?? model?.bodyData?.last.fat;
+                  double? muscle = double.tryParse(_muscle.text) ??
+                      model?.bodyData?.last.muscle;
+                  double? weight = double.tryParse(_weight.text) ??
+                      model?.bodyData?.last.weight;
 
                   UpdateBodyDataRequestDTO requestDTO =
                       UpdateBodyDataRequestDTO(fat!, muscle!, weight!);
-                  ref.watch(TodayPageProvider.notifier).notifyAddBodyData(requestDTO);
-                  ref.watch(TodayPageProvider.notifier).notifyInit();
-
-                  Navigator.pop(context);
-
+                  ref
+                      .read(TodayPageProvider.notifier)
+                      .notifyAddBodyData(requestDTO);
                 },
               ),
             ],
