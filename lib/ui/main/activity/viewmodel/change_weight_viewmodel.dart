@@ -4,7 +4,6 @@ import 'package:project_app/data/dtos/response_dto.dart';
 
 import '../../../../data/dtos/activity/activity_response.dart';
 import '../../../../data/repository/activity_repository.dart';
-import '../../../../data/store/session_store.dart';
 import '../../../../main.dart';
 
 class ChangeWeightModel {

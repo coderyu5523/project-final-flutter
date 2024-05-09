@@ -9,8 +9,8 @@ class ChangeBodyDataDTO {
   final double goalMuscle;
   final double goalWeight;
 
-  ChangeBodyDataDTO(this.userId, this.fat, this.muscle, this.weight, this.goalFat,
-      this.goalMuscle, this.goalWeight);
+  ChangeBodyDataDTO(this.userId, this.fat, this.muscle, this.weight,
+      this.goalFat, this.goalMuscle, this.goalWeight);
 
   ChangeBodyDataDTO.fromJson(Map<String, dynamic> json)
       : userId = json["userId"],
@@ -66,4 +66,37 @@ class WeightTimeLineDTO {
         weightTimeLine = DateFormat("yyyy-MM-dd")
             .parse(json["weightTimeLine"], true)
             .toLocal();
+}
+
+class FoodNameListDTO {
+  final int id;
+  final String name;
+
+  FoodNameListDTO(this.id, this.name);
+
+  FoodNameListDTO.fromJson(Map<String, dynamic> json)
+      : id = json["id"],
+        name = json["name"] ?? null;
+}
+
+class FoodContentListDTO {
+  final int id;
+  final String name;
+  final double carbo;
+  final double protein;
+  final double fat;
+  final int kcal;
+  final int gram;
+
+  FoodContentListDTO(this.id, this.name, this.carbo, this.protein, this.fat,
+      this.kcal, this.gram);
+
+  FoodContentListDTO.fromJson(Map<String, dynamic> json)
+      : id = json["id"],
+        name = json["name"],
+        carbo = json["carbo"].toDouble(),
+        protein = json["protein"].toDouble(),
+        fat = json["fat"].toDouble(),
+        kcal = json["kcal"],
+        gram = json["gram"];
 }
