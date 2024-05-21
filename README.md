@@ -9,12 +9,10 @@ https://play.google.com/store/apps/details?id=com.amway.bodykeykorea&hl=ko&gl=US
 https://github.com/coderyu5523/project-final-spring
 
 
-## 시연 
+## 시연 영상
 ## PPT
 
 ## 팀원 소개
-
-<br>
 
 ### Team-Leader
 |                                                         이름                                                        |                     프로필 사진                     |       GitHub 주소        |
