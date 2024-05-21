@@ -31,7 +31,7 @@ https://github.com/coderyu5523/project-final-spring
 |                     장유진                  | <img src="https://avatars.githubusercontent.com/u/78337301?v=4" alt="profile" width="100" height="100"> | [@hillview0303](https://github.com/hillview0303)  |
 
 
-
+<br>
 
 # 2.앱소개
 
@@ -51,6 +51,8 @@ https://github.com/coderyu5523/project-final-spring
 ## (4) 설문조사
 ![image](https://github.com/coderyu5523/project-final-flutter/assets/153602328/66e93046-60db-48e5-a3e7-22d6a381acd8)
 ![image](https://github.com/coderyu5523/project-final-flutter/assets/153602328/a72a6ff6-8a05-4628-8349-e18c416ad10c)
+
+<br>
 
 # 3. 시나리오
 
@@ -142,6 +144,8 @@ https://github.com/coderyu5523/project-final-spring
 </tr>
 </table>
 
+<br>
+
 # 4. 진행상황
 
 ## 류재성
@@ -190,6 +194,7 @@ https://github.com/coderyu5523/project-final-spring
 - 달력(calendar_agenda) 적용
 - 활동 권한 설정(permission_handler)
 
+<br>
 
 # 5. 개발 환경
 <span>
@@ -226,6 +231,7 @@ https://github.com/coderyu5523/project-final-spring
 ## 테이블 설계
 ![image](https://github.com/coderyu5523/project-final-flutter/assets/153602328/ce6cf877-3b30-4e3b-84f4-0303ee579d16)
 
+<br>
 
 # 6. 협업 전략
 
