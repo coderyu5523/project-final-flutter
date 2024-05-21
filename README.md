@@ -56,78 +56,7 @@ https://github.com/coderyu5523/project-final-spring
 
 # 3. 시나리오
 
-<table style="border: 2px;">
-<tr>
-  <td align=center>구동 화면</td>
-  <td align=center>회원가입</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/71c0bcfb-ccd9-44ab-8c9a-e3f60dc170ea"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/fe89cdd0-5943-4a30-97b9-80207463b4ef"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>로그인</td>
-  <td align=center>메인 페이지</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/c3689a4f-c77d-49b8-885e-693211420b2b"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/7ec0f32e-1caa-4916-b9c3-8b07320c473f"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>목표 데이터 설정</td>
-  <td align=center>오늘 데이터 설정</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/282a7b02-628d-487f-88df-33685ca5e70a"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/6ab82f79-dc6c-4f76-b1f2-75c8e70fad50"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>활동 페이지</td>
-  <td align=center>걸음 상세보기</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/aa457bef-223e-41b5-8e3d-737b82406ffe"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/280f50c3-8782-469e-8cfe-21d11f1a9a8d"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>물 마시기</td>
-  <td align=center>식단 페이지</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/9bc6ce72-fac8-4368-9446-4206af533621"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/35aef2fe-a173-4ac1-82ba-2241aa3d76bd"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>식단 업로드</td>
-  <td align=center>나의 변화량</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/4de61583-ca47-436b-9db0-b725edc55c60"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/3b74fe91-8a25-451f-9e6a-072042bc9248"  width="256" height="455"/></td>
-</tr>
-  <tr>
-  <td align=center>챌린지 상세보기</td>
-  <td align=center>챌린지 참가</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/e178e6bd-2c43-4e4f-beea-3883c5df0688"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/f78002dd-8b38-49ab-a749-2ce694a0c4ef"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>진행중인 챌린지</td>
-  <td align=center>설문조사 페이지</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/083a83a6-2fdf-448f-a6ad-bfa33f5e2b75"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/3e5959aa-e4df-4bdf-b45c-99d6ee4947ca"  width="256" height="455"/></td>
-</tr>
-<tr>
-  <td align=center>설문조사 작성중</td>
-  <td align=center>설문조사 완료</td>
-</tr>
-<tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/f986ded2-9567-4d68-9a36-23e23cab5115"  width="256" height="455"/></td>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/56f72b12-9877-425c-8b60-c0ea33d03299"  width="256" height="455"/></td>
+ub.com/coderyu5523/project-final-spring/assets/153602328/56f72b12-9877-425c-8b60-c0ea33d03299"  width="256" height="455"/></td>
 </tr>
 </table>
 <table>
