@@ -10,7 +10,11 @@ https://github.com/coderyu5523/project-final-spring
 
 
 ## 시연 영상
+https://youtu.be/ngoAZXk4fdQ
+
 ## PPT
+[프로젝트 final 4조.pptx](https://github.com/coderyu5523/project-final-flutter/files/15402039/final.4.pptx)
+
 
 ## 팀원 소개
 
