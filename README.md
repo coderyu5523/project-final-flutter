@@ -135,19 +135,19 @@ https://youtu.be/ngoAZXk4fdQ
   <td align=center>설문조사 작성(관리자)</td>
 </tr>
 <tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/2ded1460-a8fe-4be0-b339-bd245d7b121a"  width="800" height="455"/></td>
+  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/2ded1460-a8fe-4be0-b339-bd245d7b121a"  width="800" height="400"/></td>
 </tr>
 <tr>
   <td align=center>설문조사 상세보기(관리자)</td>
 </tr>
 <tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/b30d41dd-aed7-40fa-a14d-88e1bde196d0"  width="800" height="455"/></td>
+  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/b30d41dd-aed7-40fa-a14d-88e1bde196d0"  width="800" height="400"/></td>
 </tr>
 <tr>
   <td align=center>설문조사 통계(관리자)</td>
 </tr>
 <tr>
-  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/5a2f6e80-051b-4cd6-b4d2-116189147df9"  width="800" height="455"/></td>
+  <td><img src="https://github.com/coderyu5523/project-final-spring/assets/153602328/5a2f6e80-051b-4cd6-b4d2-116189147df9"  width="800" height="400"/></td>
 </tr>
 </table>
 
