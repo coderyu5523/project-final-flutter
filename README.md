@@ -32,7 +32,7 @@ https://youtu.be/ngoAZXk4fdQ
 
 
 ### Front-End
-|                     이름                     |                     프로필 사진                     |       GitHub 주        |
+|                     이름                     |                     프로필 사진                     |       GitHub 주소        |
 |:-------------------------------------------:|:---------------------------------------------------:|:--------------------------:|
 |                     김정수                  | <img src="https://avatars.githubusercontent.com/u/78337301?v=4" alt="profile" width="100" height="100"> | [@zeeq123](https://github.com/zeeq123)  |
 |                     장유진                  | <img src="https://avatars.githubusercontent.com/u/78337301?v=4" alt="profile" width="100" height="100"> | [@hillview0303](https://github.com/hillview0303)  |
